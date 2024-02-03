@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle" style="display: flex; align-items: center; justify-content: space-between;">
+        <h1 id="title">HOME</h1>
+        <div style="display: flex; align-items: center; width: 80%;">
+            <p class="lead" style="text-align: justify;">
+                A produtividade é o resultado da eficiência com que uma pessoa ou organização usa seus recursos para alcançar seus objetivos.
+                No mundo atual, cada vez mais competitivo, é essencial ser produtivo para se destacar. A Thufy Tools é uma aplicação Web que
+                oferece diversas ferramentas para te ajudar a aumentar a sua produtividade!
+            </p>
+            <div style="">
+                <img src="~/Imagens/guyworking.gif" alt="GIF de carregamento">
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <div class="row">
+        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+            <h2 id="gettingStartedTitle">PDF TOOLS</h2>
+            <p>
+                Explore a nossa seção de ferramentas PDF. Edite com facilidades seus arquivos em PDF,
+                de forma rápida e segura.
+            </p>
+            <p>
+                @Html.ActionLink("Ferramentas PDF", "IndexPdfTools", "Tools", new { area = "" }, new { @class = "btn btn-info" })
+            </p>
+        </section>
+        <section class="col-md-4" aria-labelledby="librariesTitle">
+            <h2 id="librariesTitle">Relatórios</h2>
+            <p>
+                Você pode acompanhar o progresso de seus projetos, analisar o desempenho de sua equipe e tomar decisões mais informadas.
+            </p>
+            <p><a class="btn btn-info" href="">Learn more &raquo;</a></p>
+        </section>
+        <section class="col-md-4" aria-labelledby="hostingTitle">
+            <h2 id="hostingTitle">Outras Ferramentas</h2>
+            <p>Você também pode acessar nossas outras ferramentas!</p>
+            <p><a class="btn btn-outline-dark" href="">SADCOB &raquo;</a> <a class="btn btn-outline-dark" href="">BIM&raquo;</a> </p>
+        </section>
+    </div>
+</main>

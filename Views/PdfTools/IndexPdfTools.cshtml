@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Home PDFTolls";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle" style="display: flex; align-items: center; justify-content: space-between;">
+        <h1 id="title">PDF TOOLS</h1>
+        <div style="display: flex; align-items: center; width: 80%;">
+            <div style="margin-right: 80px;">
+                <p class="lead" style="text-align: justify;">
+                    Escolha uma de nossas ferramentas:
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <div class="row">
+        <section class="row justify-content-center align-items-center" aria-labelledby="gettingStartedTitle">
+
+            <div class="col-md-3 mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top mx-auto d-block" style="width: 70%;" src="~/Imagens/Cards/comprimircolor.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Comprimir PDF</h5>
+                        <p class="card-text">Deixe seu arquivo PDF mais leve e otimizado.</p>
+                        <!--<a href="#" class="btn btn-primary">Comprimir</a>-->
+                        <a>
+                            @Html.ActionLink("Comprimir", "Comprimir", "Tools", new { area = "" }, new { @class = "btn btn-primary" })
+                        </a>
+
+                    </div>
+                </div>  
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top mx-auto d-block" style="width: 70%;" src="~/Imagens/Cards/dividircolor2.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Dividir PDF</h5>
+                        <p class="card-text">Divida seus arquivos PDF em outras partes.</p>
+                        <a href="#" class="btn btn-primary">Dividir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top mx-auto d-block" style="width: 70%;" src="~/Imagens/Cards/juntarcolor.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Juntar PDF</h5>
+                        <p class="card-text">Junte seus arquivos PDF em um único arquivo.</p>
+                        <a href="#" class="btn btn-primary">Juntar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top mx-auto d-block" style="width: 70%" src="~/Imagens/Cards/pdftowordcolor.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">PDF para Word</h5>
+                        <p class="card-text">Converta seu PDF em um arquivo WORD (.docx).</p>
+                        <a href="#" class="btn btn-primary">Converter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-md-4" aria-labelledby="hostingTitle">
+        </section>
+    </div>
+</main>
+<script>
+    // Verifique se há uma mensagem de popup na ViewBag
+    var popupMensagem = '@ViewBag.PopupMensagem';
+    var exibirPopup = @ViewBag.ExibirPopup;
+
+    $(document).ready(function () {
+        // Exiba o popup se houver uma mensagem e a variável de exibição for verdadeira
+        if (popupMensagem && exibirPopup) {
+            alert(popupMensagem);
+
+            // Oculte o popup após 3 segundos (3000 milissegundos)
+            setTimeout(function () {
+                // Adapte isso conforme necessário para ocultar o popup de maneira mais elegante
+                alert('Popup oculto após 3 segundos');
+            }, 3000);
+        }
+    });
+</script>

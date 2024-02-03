@@ -1,0 +1,17 @@
+@if (TempData["NotificationMessage"] != null && TempData["NotificationType"] != null)
+{
+    <script type="text/javascript">
+        const message = '@TempData["NotificationMessage"]';
+        const type = '@TempData["NotificationType"]';
+
+        const toast = document.createElement('div');
+        toast.classList.add('toast', `toast-${type}`);
+        toast.textContent = message;
+
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+            toast.remove();
+        }, 3000);
+    </script>
+}

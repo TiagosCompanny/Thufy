@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Comprimir";
+}
+@{
+    //Scripts.Render("~/bundles/meujs");
+}
+@model Thufy.Models.ComprimirModel
+
+@using (Html.BeginForm("Comprimir", "Tools", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <main>
+        <section class="row" aria-labelledby="aspnetTitle" style="display: flex; align-items: center; justify-content: space-between;">
+            <h1 id="title">COMPRIMIR PDF</h1>
+            <div style="display: flex; align-items: center; width: 80%;">
+                <div style="margin-right: 80px;">
+                    <p class="lead" style="text-align: justify;">
+                        Comprima o seu arquivo aqui:
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div>
+            <p> </p>
+        </div>
+        <div id="FileContainer">
+            <div style="display: flex; align-items: center;" id="container">
+                <input class="inputFile" id="inputOrigemArquivo" type="file" accept=".pdf" style="display: none;" name="InputFile" onchange="mostrarCaminhoArquivo(this)" />
+                @Html.TextBoxFor(model => model.InputFile, new { @id = "origemArquivo", @class = "inputFile", placeholder = "Origem Arquivo" })
+                <label for="inputOrigemArquivo" class="buttonFile">Selecionar</label>
+            </div>
+            <br>
+            <br>
+            <div>
+                <input type="radio" name="compressionType" id="CompressaoExtrema" value="1">
+                <label for="CompressaoExtrema">Compressão Extrema</label>
+                <input type="radio" name="compressionType" id="CompressaoMedia" value="2" checked>
+                <label for="CompressaoMedia">Compressão Média</label>
+                <input type="radio" name="compressionType" id="CompressaoLeve" value="3">
+                <label for="CompressaoLeve">Compressão Leve</label>
+            </div>
+            <br>
+            <br>
+            <div>
+                <br>
+                <br>
+                <button id="buttonCompress" type="submit">Comprimir</button>
+            </div>
+            <br>
+            <div class="row">
+            </div>
+    </main>
+}  
